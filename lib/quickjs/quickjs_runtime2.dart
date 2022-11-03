@@ -173,7 +173,7 @@ class QuickJsRuntime2 extends JavascriptRuntime {
 
     if (jsIsException(jsval) != 0) {
       jsFreeValue(ctx, jsval);
-      JSError exception = _parseJSException(ctx);
+      final exception = _parseJSException(ctx);
       return JsEvalResult(exception.toString(), exception, isError: true);
     }
     final result = _jsToDart(ctx, jsval);
@@ -187,7 +187,7 @@ class QuickJsRuntime2 extends JavascriptRuntime {
     //   print(
     //       'RESULT: ${result.onError((error, stackTrace) => print('ERROR: $error _-----------------'))}');
     // }
-    //jsFreeValue(ctx, jsval);
+    jsFreeValue(ctx, jsval);
     return JsEvalResult(result?.toString() ?? "null", result);
   }
 
