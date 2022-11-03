@@ -1,4 +1,4 @@
-name: flutter_js_async
+name: flutter_js
 description: A Javascript engine to use with flutter. 
   It uses Quickjs on Android and JavascriptCore on IOS
 version: 0.5.0+7
